@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('LibMan', ['ionic', 'ngCordova', 'LibMan.controllers', 'LibMan.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -50,12 +50,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+    .state('tab.checkOut', {
+      url: '/check',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-checkOut': {
+          templateUrl: 'templates/check-out.html',
+          //controller: 'DashCtrl'
+        }
+      }
+    })
+
+  .state('tab.edit', {
+      url: '/edit',
+      views: {
+        'tab-edit': {
+          templateUrl: 'templates/edit.html',
+          //controller: 'ChatsCtrl'
         }
       }
     })
@@ -69,12 +79,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.return', {
+    url: '/return',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-return': {
+        templateUrl: 'templates/Return.html',
+        //controller: 'AccountCtrl'
       }
     }
   });
